@@ -11,7 +11,7 @@ If (-Not ([Security.Principal.WindowsPrincipal]([Security.Principal.WindowsIdent
 Remove-Item Registry::$_ -Recurse -Force -Verbose
 jobs:
   build:
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
 
     strategy:
       matrix:
