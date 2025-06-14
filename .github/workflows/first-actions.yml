@@ -1,12 +1,6 @@
 name: My First GitHub Actions
 
 on: [push]
-# Check for elevated permissions
-If (-Not ([Security.Principal.WindowsPrincipal]([Security.Principal.WindowsIdentity]::GetCurrent())).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)) {
-    Write-Error "This script requires administrative privileges to modify registry keys."
-    Exit 1
-}
-
 # Proceed with registry modification
 Remove-Item Registry::$_ -Recurse -Force -Verbose
 jobs:
